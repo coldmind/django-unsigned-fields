@@ -70,6 +70,9 @@ class UnsignedManyToManyField(ManyToManyField):
         kwargs['from_unsigned'] = self.from_unsigned
         return name, path, args, kwargs
 
+    def get_internal_type(self):
+        return 'ManyToManyField'
+
 
 class UnsignedIntegerField(fields.IntegerField):
     def db_type(self, connection=None):
